@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fanpage_manage/common/util.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_page/list_page_screen.dart';
-import 'package:flutter_app_fanpage_manage/pages/list_post/list_page.dart';
+import 'package:flutter_app_fanpage_manage/pages/list_post/list_post_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/login/login_screen.dart';
 import 'package:flutter_app_fanpage_manage/provider/login_provider.dart';
 import 'package:flutter_app_fanpage_manage/router.dart';
