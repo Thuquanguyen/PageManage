@@ -8,12 +8,6 @@ abstract class IPageDetailProvider{
 }
 
 class PageDetailAPIService extends GetConnect implements IPageDetailProvider{
-  @override
-  void onInit() {
-    httpClient.defaultDecoder((val) => PageDetailModel.fromJson(json.decode(val)));
-    httpClient.baseUrl = Util.BASE_URL;
-    super.onInit();
-  }
 
   @override
   Future<Response<PageDetailModel>> getListPost(String idPage, String tokenPage) => get("$idPage/feed?limit=100&access_token=$tokenPage&format=json");

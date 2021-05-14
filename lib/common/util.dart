@@ -7,6 +7,8 @@ class Util{
   static ThemeData themeData = ThemeData(primaryColor: Colors.blue,visualDensity: VisualDensity.adaptivePlatformDensity);
 
   static const String KEY_TOKEN = "key_token";
+  static const String KEY_ID_PAGE = "key_id_page";
+  static const String KEY_TOKEN_PAGE = "key_token_page";
 
   static Future<dynamic> readReferent(String key) async{
         final prefs = await SharedPreferences.getInstance();

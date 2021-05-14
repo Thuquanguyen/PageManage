@@ -12,8 +12,9 @@ class LoginController extends SuperController<PageModel>{
   @override
   void onInit() {
     // TODO: implement onInit
-    super.onInit();
     append(() => loginResponse.getListPage);
+    super.onInit();
+
   }
 
   @override

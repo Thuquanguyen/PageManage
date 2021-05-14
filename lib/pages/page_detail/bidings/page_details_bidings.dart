@@ -15,6 +15,6 @@ class PageDetailBidings extends Bindings{
   void injectService(){
       Get.lazyPut<IPageDetailProvider>(() => PageDetailAPIService());
       Get.lazyPut<IPageDetailResponse>(() => PageDetailResponse(provider: Get.find()));
-      Get.lazyPut(() => PageDetailController());
+      Get.lazyPut(() => PageDetailController(response: Get.find()));
   }
 }
