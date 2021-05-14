@@ -1,14 +1,13 @@
 /// data : [{"created_time":"2020-05-08T05:37:20+0000","message":"Tưng bừng #GIẢM_50% #TẤT_CẢ_CÁC_MẶT_HÀNG cho ngày hè thêm #SÔI_ĐỘNG \n😍😍😍Chỉ còn #79K #79K 1 chiếc thôi ạ!\n😍😍😍#Đặt từ 3 áo trở lên được #FREE ngay 1 chiếc áo mệnh Giá #99K bất kỳ trên #WinX\n#Hết_dịch rồi ngại gì k #Quẩy cũng #Win_X\nEm này #vải cực #đẹp nhé mọi người SO CUTE 🥰🥰 #Freeship khi mua từ 2 áo trở lên nhé #couple nhé #hìnhthật100%\n#Đủ_Size cho các bạn từ 35-75Kg nha \nINBOX SHOP NGAY NHÉ","id":"292440411314960_654243921801272"},null]
-
 class PageDetailModel {
   List<PostModel> _data;
 
   List<PostModel> get data => _data;
 
   PageDetailModel({
-      List<PostModel> data}){
+    List<PostModel> data}){
     _data = data;
-}
+  }
 
   factory PageDetailModel.fromJson(Map<String, dynamic> json) {
     return PageDetailModel(
@@ -29,7 +28,6 @@ class PageDetailModel {
 /// created_time : "2020-05-08T05:37:20+0000"
 /// message : "Tưng bừng #GIẢM_50% #TẤT_CẢ_CÁC_MẶT_HÀNG cho ngày hè thêm #SÔI_ĐỘNG \n😍😍😍Chỉ còn #79K #79K 1 chiếc thôi ạ!\n😍😍😍#Đặt từ 3 áo trở lên được #FREE ngay 1 chiếc áo mệnh Giá #99K bất kỳ trên #WinX\n#Hết_dịch rồi ngại gì k #Quẩy cũng #Win_X\nEm này #vải cực #đẹp nhé mọi người SO CUTE 🥰🥰 #Freeship khi mua từ 2 áo trở lên nhé #couple nhé #hìnhthật100%\n#Đủ_Size cho các bạn từ 35-75Kg nha \nINBOX SHOP NGAY NHÉ"
 /// id : "292440411314960_654243921801272"
-
 class PostModel {
   String _createdTime;
   String _message;
@@ -40,13 +38,13 @@ class PostModel {
   String get id => _id;
 
   PostModel({
-      String createdTime, 
-      String message, 
-      String id}){
+    String createdTime,
+    String message,
+    String id}){
     _createdTime = createdTime;
     _message = message;
     _id = id;
-}
+  }
 
   PostModel.fromJson(dynamic json) {
     _createdTime = json["created_time"];

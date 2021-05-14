@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:flutter_app_fanpage_manage/common/util.dart';
+import 'package:flutter_app_fanpage_manage/pages/list_page/list_page_screen.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'list_page_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routerName = '/login';
@@ -26,8 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         final FacebookAccessToken accessToken = result.accessToken;
-        Util.saveReferent(Util.KEY_TOKEN,result.accessToken.token);
-        Get.toNamed(ListPageScreen.routerName,arguments: accessToken.token);
+        print("accessToken.token : ${accessToken.token}");
+        Navigator.of(context).pushNamed(ListPageScreen.routerName,arguments: accessToken.token);
         _showMessage('''
          Logged in!
          Token: ${accessToken.token}
