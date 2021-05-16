@@ -1,16 +1,24 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fanpage_manage/common/util.dart';
+import 'package:flutter_app_fanpage_manage/model/newspaper_model.dart';
 import 'package:flutter_app_fanpage_manage/model/page_model.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_post/list_post_screen.dart';
 import 'package:flutter_app_fanpage_manage/provider/login_provider.dart';
 import 'package:get/get.dart';
 
-class ListPageScreen extends StatelessWidget {
+class ListPageScreen extends StatefulWidget {
   static const routerName = "/list-page";
-  PageProvider _bloc = PageProvider.instance;
-  List<PageMD> listPage;
 
+  @override
+  _ListPageScreenState createState() => _ListPageScreenState();
+}
+
+class _ListPageScreenState extends State<ListPageScreen> {
+  PageProvider _bloc = PageProvider.instance;
+
+  List<PageMD> listPage;
   @override
   Widget build(BuildContext context) {
     final String token = ModalRoute.of(context).settings.arguments as String;

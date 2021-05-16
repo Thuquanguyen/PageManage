@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039126955627",
+    "project_id": "pagemanage-f7300",
+    "storage_bucket": "pagemanage-f7300.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039126955627:android:421ae350bb659d8530d32e",
+        "android_client_info": {
+          "package_name": "com.flutter.flutter_app_fanpage_manage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039126955627-sf8r68etuacpkkt399i1l1opj73sou6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYNq-q9CHg_VY22Lxl6GZe_5yCYA5uhnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039126955627-sf8r68etuacpkkt399i1l1opj73sou6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

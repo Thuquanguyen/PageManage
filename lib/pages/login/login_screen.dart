@@ -13,7 +13,6 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   static final FacebookLogin facebookSignIn = new FacebookLogin();
-
   String _message = 'Log in/out '
       ''
       'by pressing the buttons below.';

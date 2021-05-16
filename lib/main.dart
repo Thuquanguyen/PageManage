@@ -1,12 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fanpage_manage/common/util.dart';
+import 'package:flutter_app_fanpage_manage/pages/home/home_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_page/list_page_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_post/list_post_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/login/login_screen.dart';
+import 'package:flutter_app_fanpage_manage/pages/splat_screen/splat_view.dart';
 import 'package:flutter_app_fanpage_manage/provider/login_provider.dart';
 import 'package:flutter_app_fanpage_manage/router.dart';
-import 'package:get/get.dart';
 
 import 'bloc/bloc_provider.dart';
 
@@ -22,12 +23,14 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(),
-          initialRoute: LoginScreen.routerName,
+          initialRoute: SplatView.routeName,
           onGenerateRoute: Routerr.generateRoute,
           routes: {
+            SplatView.routeName: (_) => SplatView(),
             LoginScreen.routerName: (_) => LoginScreen(),
             ListPageScreen.routerName: (_) => ListPageScreen(),
-            ListPostScreen.routerName: (_) => ListPostScreen()
+            ListPostScreen.routerName: (_) => ListPostScreen(),
+            HomeScreen.routerName: (_) => HomeScreen()
           },
         ),
         bloc: _bloc);

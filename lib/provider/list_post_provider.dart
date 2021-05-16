@@ -22,7 +22,7 @@ class PostProvider extends BlocBase {
   Future<PageDetailModel> getListSubject(String idPage,String tokenPage) async {
     PageDetailModel postModel =
     await subjectProvider.getListPost(idPage, tokenPage);
-    print("data : ${postModel}");
+    print("data : ${postModel.toJson()}");
     if (postModel == null) {
       _streamController.sink.addError("error");
     } else {
