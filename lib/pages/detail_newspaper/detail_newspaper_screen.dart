@@ -9,6 +9,7 @@ class DetailNewspaperScreen extends StatelessWidget {
   const DetailNewspaperScreen({Key key}) : super(key: key);
 
   shareOnFacebook(String url, String message)  {
+    print("share shae share");
     FlutterShareMe().shareToFacebook(
         url: url, msg: message);
   }
