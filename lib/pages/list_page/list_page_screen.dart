@@ -6,7 +6,9 @@ import 'package:flutter_app_fanpage_manage/model/newspaper_model.dart';
 import 'package:flutter_app_fanpage_manage/model/page_model.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_post/list_post_screen.dart';
 import 'package:flutter_app_fanpage_manage/provider/login_provider.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:get/get.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class ListPageScreen extends StatefulWidget {
   static const routerName = "/list-page";
@@ -16,23 +18,28 @@ class ListPageScreen extends StatefulWidget {
 }
 
 class _ListPageScreenState extends State<ListPageScreen> {
+  static final FacebookLogin facebookSignIn = new FacebookLogin();
   PageProvider _bloc = PageProvider.instance;
-
   List<PageMD> listPage;
+
+  Future<Null> _logOut() async {
+    await facebookSignIn.logOut();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final String token = ModalRoute.of(context).settings.arguments as String;
-    print("tokekekeke : $token");
-    _bloc.getListSubject(token);
+    Util.readReferent(Util.KEY_TOKEN).then((value) {
+      _bloc.getListSubject(value);
+    });
 
     return Scaffold(
       appBar: AppBar(
         title: Text("Danh sách Fanpage"),
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.arrow_back_ios)),
+          actions: [
+            IconButton(onPressed: (){
+              _logOut();
+            }, icon: Icon(Icons.logout))
+          ]
       ),
       body: StreamBuilder<PageModel>(
         stream: _bloc.pageStream,
@@ -73,7 +80,11 @@ Widget _listPage(List<PageMD> listPage,BuildContext context) => ListView.builder
           ),
         ),
         onTap: () {
-          Navigator.of(context).pushNamed(ListPostScreen.routerName,arguments: listPage[index]);
+          pushNewScreenWithRouteSettings(context,
+              screen: ListPostScreen(),
+              settings: RouteSettings(
+                  name: ListPostScreen.routerName, arguments: listPage[index]));
+          // Navigator.of(context).pushNamed(ListPostScreen.routerName,arguments: );
         },
       );
     },

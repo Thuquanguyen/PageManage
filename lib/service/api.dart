@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_fanpage_manage/common/util.dart';
 import 'package:flutter_app_fanpage_manage/model/page_detail_model.dart';
 import 'package:flutter_app_fanpage_manage/model/page_model.dart';
+import 'package:flutter_app_fanpage_manage/model/profile_model.dart';
 import 'package:http/http.dart';
 
 class Api {

@@ -31,7 +31,7 @@ class _ListPostScreenState extends State<ListPostScreen> with AutomaticKeepAlive
         title: Text("Danh sách Fanpage"),
         leading: IconButton(
             onPressed: () {
-              Get.back();
+              Navigator.of(context).pop();
             },
             icon: Icon(Icons.arrow_back_ios)),
       ),

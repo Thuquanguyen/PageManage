@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_fanpage_manage/common/util.dart';
+import 'package:flutter_app_fanpage_manage/pages/detail_newspaper/detail_newspaper_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/home/home_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_page/list_page_screen.dart';
 import 'package:flutter_app_fanpage_manage/pages/list_post/list_post_screen.dart';
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
             LoginScreen.routerName: (_) => LoginScreen(),
             ListPageScreen.routerName: (_) => ListPageScreen(),
             ListPostScreen.routerName: (_) => ListPostScreen(),
-            HomeScreen.routerName: (_) => HomeScreen()
+            HomeScreen.routerName: (_) => HomeScreen(),
+            DetailNewspaperScreen.routeName: (_) => DetailNewspaperScreen()
           },
         ),
         bloc: _bloc);

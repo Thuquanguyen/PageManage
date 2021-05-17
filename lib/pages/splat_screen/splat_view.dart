@@ -16,11 +16,11 @@ class _SplatScreenState extends State<SplatView> {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   Future<int> _counter;
   @override
+
   void initState() {
     _counter = _prefs.then((SharedPreferences prefs) {
       Future.delayed(new Duration(milliseconds: 2000),(){
-      Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (context) => HomeScreen()),
+      Navigator.of(context).pushAndRemoveUntil(CupertinoPageRoute(builder: (context) => HomeScreen()),
       (Route<dynamic> route) => false);
       });
       return (prefs.getInt('intro') ?? 0);
